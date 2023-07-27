@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Leetcodes
 {
-    internal class project
-    {
+    //internal class project
+    //{
 
-    }
+    //}
     public class TwoSums
     {
         public static int[] TwoSum(int[] nums, int target)
@@ -71,4 +71,35 @@ namespace Leetcodes
         }
         
     }
+
+    public static class LongestCommonPrefixs
+    {
+        public static string LongestCommonPrefix(string[] strs)
+        {
+            int minLenght = (int)Math.Pow(-2,30);
+            string word = "";bool istrue = true;
+            foreach (string str in strs)
+            {
+                if (str.Length < minLenght) { minLenght = str.Length;  word = str; }
+            }
+            while (word != "")
+            {
+
+                foreach (string str in strs)
+                {
+                    if (!(str.Substring(0, word.Length)==word)){ istrue = false;
+                        word=word.Substring(0,word.Length-1);
+                        break; }
+                }
+                if (istrue) return word;
+                else istrue = true;
+
+            }
+            return "";
+
+
+
+        }
+    }
+
 }
