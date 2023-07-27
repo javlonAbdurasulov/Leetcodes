@@ -102,4 +102,43 @@ namespace Leetcodes
         }
     }
 
+    public class IsValidSkobki
+    {
+        public static bool IsValid(string s)
+        {
+            string strs = "";
+            for (int i = 0; i < s.Length; i++)
+            {
+
+                if (s[i] == '{' || s[i] == '(' || s[i] == '[')
+                {
+                    strs += s[i];
+                } 
+                else if (s[i] == '}' || s[i] == ')' || s[i] == ']')
+                {
+
+                    if(strs=="") return false;
+                    else  if (strs[strs.Length - 1] == Revers(s[i])) { strs = strs.Substring(0, strs.Length - 1); }
+                    else if (s[i] == ' ') continue;
+                    else { return false; }
+
+                } 
+                else continue;
+
+            }
+            GC.Collect();
+            if(strs=="") return true;else return false;
+        }
+        public static char Revers(char s)
+        {
+            switch (s)
+            {
+                case '}':  return '{'; break;
+                case ')': return '('; break;
+                case ']': return '['; break;
+            }
+            return s;
+        }
+    }
+
 }

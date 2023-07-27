@@ -11,6 +11,10 @@
             //LongestCommonPrefixs
             //string[] strings = { "flower", "flow", "flight" };
             //Console.WriteLine(LongestCommonPrefixs.LongestCommonPrefix(strings));
+            
+            //IsValid
+            //Console.WriteLine(IsValidSkobki.IsValid("]"));
+            
 
 
         }
